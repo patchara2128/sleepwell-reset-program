@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SleepWell 7 Days Reset Program</title>
+  <meta name="description" content="SleepWell 7 Days Reset Program: Sound Therapy, Breathing 3–5 นาที, Sleep Routine รายวัน และแบบประเมินคุณภาพการนอนแบบสั้น" />
+  <style>
+    :root{
+      --bg:#f6f3ee;
+      --card:#ffffff;
+      --ink:#1f1f1f;
+      --muted:#6b6b6b;
+      --line:#e6dfd6;
+      --gold:#a58654;
+      --sage:#5f825a;
+      --shadow: 0 10px 30px rgba(0,0,0,.06);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans Thai", "Helvetica Neue", Arial, sans-serif;
+      color:var(--ink); background: radial-gradient(1200px 700px at 20% 0%, #fff 0%, var(--bg) 60%);
+      line-height:1.55;
+    }
+    a{color:inherit}
+    .wrap{max-width:1020px; margin:0 auto; padding:28px 18px 64px;}
+    header{
+      display:flex; gap:18px; align-items:flex-start; justify-content:space-between; flex-wrap:wrap;
+      padding:22px 22px 10px; background:rgba(255,255,255,.55); border:1px solid var(--line); border-radius:var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(6px);
+    }
+    .brand{
+      display:flex; flex-direction:column; gap:6px;
+    }
+    .kicker{letter-spacing:.12em; text-transform:uppercase; color:var(--muted); font-size:12px;}
+    h1{margin:0; font-size:30px; letter-spacing:.02em}
+    .by{color:var(--gold); font-weight:600; font-size:14px}
+    .hero{
+      margin-top:18px;
+      display:grid; grid-template-columns: 1.2fr .8fr; gap:14px;
+    }
+    @media (max-width:860px){ .hero{grid-template-columns:1fr} }
+    .card{
+      background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+      box-shadow: var(--shadow); padding:18px 18px;
+    }
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 12px; border-radius:999px; border:1px solid var(--line);
+      color:var(--muted); background:#fff;
+      font-size:13px; margin:6px 6px 0 0;
+    }
+    .pill b{color:var(--ink)}
+    .grid{
+      margin-top:14px;
+      display:grid; gap:14px;
+      grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width:860px){ .grid{grid-template-columns:1fr} }
+    h2{margin:0 0 8px; font-size:18px}
+    p{margin:0 0 10px}
+    .muted{color:var(--muted)}
+    .divider{height:1px; background:var(--line); margin:14px 0}
+    .btnrow{display:flex; flex-wrap:wrap; gap:10px; align-items:center}
+    button{
+      appearance:none; border:1px solid var(--line); background:#fff; color:var(--ink);
+      padding:10px 12px; border-radius:12px; cursor:pointer; font-weight:600;
+    }
+    button.primary{background:var(--ink); color:#fff; border-color:var(--ink)}
+    button.gold{background:var(--gold); color:#fff; border-color:var(--gold)}
+    button:disabled{opacity:.55; cursor:not-allowed}
+    .small{font-size:13px}
+    .tag{
+      display:inline-flex; align-items:center; padding:4px 10px; border-radius:999px;
+      border:1px solid var(--line); color:var(--muted); background:#fbfaf8; font-size:12px;
+    }
+    .timer{
+      display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;
+      padding:12px; border:1px dashed var(--line); border-radius:14px; background:#fbfaf8;
+    }
+    .time{
+      font-variant-numeric: tabular-nums; font-size:26px; font-weight:800; letter-spacing:.04em;
+    }
+    .status{
+      color:var(--sage); font-weight:700;
+    }
+    .days{
+      display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 12px;
+    }
+    .daybtn{
+      padding:8px 10px; border-radius:999px; border:1px solid var(--line); background:#fff; font-weight:700;
+    }
+    .daybtn.active{background:var(--sage); border-color:var(--sage); color:#fff}
+    .routine{
+      border-left:4px solid var(--sage); padding-left:12px;
+    }
+    .checklist{
+      margin:10px 0 0; padding:0 0 0 16px;
+    }
+    .checklist li{margin:6px 0}
+    .formgrid{
+      display:grid; grid-template-columns: 1fr 1fr; gap:10px;
+    }
+    @media (max-width:720px){ .formgrid{grid-template-columns:1fr} }
+    label{display:block; font-size:13px; color:var(--muted); margin-bottom:6px}
+    select, input[type="text"], input[type="number"], textarea{
+      width:100%; padding:10px 12px; border-radius:12px; border:1px solid var(--line); background:#fff;
+      font-size:14px;
+    }
+    textarea{min-height:90px; resize:vertical}
+    .scorebox{
+      display:flex; gap:10px; align-items:flex-start; flex-wrap:wrap;
+      padding:12px; border-radius:14px; border:1px solid var(--line); background:#fff;
+    }
+    .score{
+      font-size:32px; font-weight:900; color:var(--ink); line-height:1;
+    }
+    .scorehint{color:var(--muted); font-size:13px}
+    .footer{
+      margin-top:18px; color:var(--muted); font-size:12px;
+    }
+    .note{
+      background:#fff8ef; border:1px solid #f0d9b8; color:#6a4a1a;
+      padding:12px; border-radius:14px; font-size:13px;
+    }
+    .audio-wrap audio{width:100%}
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="kicker">SLEEP WELLNESS • 7 DAYS RESET</div>
+        <h1>SleepWell Lotus Mist</h1>
+        <div class="by">by LotusMind Wellness</div>
+        <div class="btnrow" style="margin-top:6px">
+          <span class="pill"><b>Spray</b> ฉีดหมอน 2–3 ครั้ง</span>
+          <span class="pill"><b>Scan</b> เปิดหน้านี้</span>
+          <span class="pill"><b>Sleep</b> ทำตาม 5 นาที</span>
+        </div>
+      </div>
+      <div style="min-width:280px; max-width:360px">
+        <div class="note">
+          <b>วิธีใช้แบบเร็ว (คืนนี้)</b><br/>
+          1) ฉีดสเปรย์ก่อนนอน 5 นาที<br/>
+          2) เลือก <b>Breathing 3–5 นาที</b><br/>
+          3) เปิด <b>Sound Therapy</b> แล้วเข้านอน<br/>
+          <div class="divider"></div>
+          <span class="muted">หมายเหตุ:</span> หน้านี้เป็นต้นแบบสำหรับนำไปโฮสต์ออนไลน์เพื่อทำ QR จริง
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="card">
+        <h2>🎧 Sound Therapy (เสียงบำบัด)</h2>
+        <p class="muted">เลือกเปิดเสียงเบา ๆ ระหว่างหายใจ/ก่อนนอน (แนะนำ 10–20 นาที)</p>
+        <div class="audio-wrap">
+          <div class="tag" style="margin:6px 0 10px">ตัวอย่างเสียง (ต้องใส่ไฟล์เสียงจริงภายหลัง)</div>
+          <audio controls preload="none">
+            <!-- ใส่ไฟล์เสียงจริง เช่น sound1.mp3 -->
+            <source src="" type="audio/mpeg" />
+            เบราว์เซอร์ของคุณไม่รองรับการเล่นเสียง
+          </audio>
+          <p class="small muted" style="margin-top:8px">
+            📌 ทีมงานสามารถแทนที่ <span class="mono">&lt;source src=""&gt;</span> ด้วยลิงก์ไฟล์ MP3 (Google Drive direct link / Hosting) ได้ทันที
+          </p>
+          <div class="btnrow" style="margin-top:10px">
+            <button id="soundGuideBtn" class="gold" type="button">ดูแนวทางเลือกเสียง</button>
+            <button id="soundStopBtn" type="button">หยุดเสียง</button>
+          </div>
+          <div id="soundGuide" class="small muted" style="display:none; margin-top:10px">
+            <b>แนวทางเลือกเสียง (แนะนำ)</b>
+            <ul class="checklist">
+              <li>เสียงฝน/ทะเล/white noise: ลดเสียงรบกวนจากภายนอก</li>
+              <li>เสียงดนตรีช้า 60–80 BPM: ช่วยให้ร่างกายผ่อนคลาย</li>
+              <li>ตั้งระดับเสียง “ได้ยินพอประมาณ” ไม่ดังกลบความเงียบ</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>🫁 Breathing 3–5 นาที (หายใจเพื่อลดเครียด)</h2>
+        <p class="muted">เลือกเวลา แล้วทำตามจังหวะ: “หายใจเข้า 4 วินาที – กลั้น 2 – หายใจออก 6”</p>
+
+        <div class="timer">
+          <div>
+            <div class="tag">เวลาที่เลือก</div>
+            <div class="time" id="timeLeft">05:00</div>
+            <div class="status" id="phase">พร้อมเริ่ม</div>
+          </div>
+          <div class="btnrow">
+            <button type="button" class="daybtn" data-min="3">3 นาที</button>
+            <button type="button" class="daybtn" data-min="4">4 นาที</button>
+            <button type="button" class="daybtn active" data-min="5">5 นาที</button>
+            <button type="button" class="primary" id="startBtn">เริ่ม</button>
+            <button type="button" id="resetBtn">รีเซ็ต</button>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+        <div class="small muted">
+          <b>ท่าแนะนำ:</b> นั่งหลังตรง ไหล่ผ่อนคลาย วางมือบนหน้าท้อง<br/>
+          <b>โฟกัส:</b> ให้ลมหายใจ “ยาวกว่าตอนหายใจเข้า” เพื่อชะลอระบบประสาท
+        </div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2>📅 Sleep Routine 7 วัน (ทำตามวันละ 5–10 นาที)</h2>
+        <p class="muted">เลือกวันด้านล่าง แล้วทำตาม Checklist คืนละนิดให้ต่อเนื่อง</p>
+
+        <div class="days" id="days"></div>
+
+        <div class="routine">
+          <div class="tag" id="dayTag">DAY 1</div>
+          <h3 id="dayTitle" style="margin:8px 0 6px; font-size:18px">Reset เวลาเข้านอน</h3>
+          <p class="muted" id="dayDesc">คืนนี้ตั้งเป้า “เข้าที่นอน” ให้เร็วขึ้น 15 นาที และลดหน้าจอก่อนนอน</p>
+          <ul class="checklist" id="dayList"></ul>
+        </div>
+
+        <div class="divider"></div>
+        <p class="small muted"><b>เคล็ดลับ:</b> ถ้าวันไหนหลุด ไม่ต้องเริ่มใหม่ ให้ทำ “คืนนี้” ต่อเลย เพื่อรักษาความต่อเนื่อง</p>
+      </div>
+
+      <div class="card">
+        <h2>📝 แบบประเมินคุณภาพการนอนแบบสั้น (1 นาที)</h2>
+        <p class="muted">ทำหลังตื่นนอน เพื่อดูแนวโน้มและปรับแผนในคืนถัดไป</p>
+
+        <form id="sleepForm">
+          <div class="formgrid">
+            <div>
+              <label>เวลาที่เข้านอน (ชั่วโมง)</label>
+              <input type="number" id="sleepHours" min="0" max="12" step="0.5" placeholder="เช่น 6.5" required />
+            </div>
+            <div>
+              <label>ใช้เวลาหลับนานแค่ไหน?</label>
+              <select id="sleepLatency" required>
+                <option value="">เลือก</option>
+                <option value="3">ภายใน 10 นาที</option>
+                <option value="2">10–30 นาที</option>
+                <option value="1">30–60 นาที</option>
+                <option value="0">มากกว่า 60 นาที</option>
+              </select>
+            </div>
+            <div>
+              <label>ตื่นกลางดึกบ่อยไหม?</label>
+              <select id="wakeNight" required>
+                <option value="">เลือก</option>
+                <option value="3">ไม่ตื่นเลย</option>
+                <option value="2">ตื่น 1 ครั้ง</option>
+                <option value="1">ตื่น 2–3 ครั้ง</option>
+                <option value="0">ตื่นมากกว่า 3 ครั้ง</option>
+              </select>
+            </div>
+            <div>
+              <label>ความสดชื่นหลังตื่น (0–10)</label>
+              <input type="number" id="freshness" min="0" max="10" step="1" placeholder="เช่น 7" required />
+            </div>
+          </div>
+
+          <div style="margin-top:10px">
+            <label>บันทึกสั้น ๆ (ไม่บังคับ)</label>
+            <textarea id="note" placeholder="เช่น เครียดจากงาน / ดื่มกาแฟบ่าย / เล่นมือถือก่อนนอน"></textarea>
+          </div>
+
+          <div class="btnrow" style="margin-top:12px">
+            <button class="primary" type="submit">คำนวณคะแนนวันนี้</button>
+            <button type="button" id="saveBtn">บันทึกลงเครื่อง (7 วัน)</button>
+            <button type="button" id="exportBtn">ดูสรุป 7 วัน</button>
+            <button type="button" id="clearBtn">ล้างข้อมูล</button>
+          </div>
+        </form>
+
+        <div class="divider"></div>
+        <div class="scorebox">
+          <div>
+            <div class="tag">คะแนนวันนี้ (0–10)</div>
+            <div class="score" id="score">–</div>
+          </div>
+          <div class="scorehint" id="scoreHint">
+            กรอกข้อมูลแล้วกด “คำนวณคะแนนวันนี้” เพื่อดูแนวโน้มคุณภาพการนอน
+          </div>
+        </div>
+
+        <div class="footer">
+          <b>หมายเหตุ:</b> แบบประเมินนี้เป็นการติดตามตนเองเพื่อปรับพฤติกรรม ไม่ใช่การวินิจฉัยทางการแพทย์
+        </div>
+      </div>
+    </section>
+
+    <section class="card" style="margin-top:14px">
+      <h2>📌 สำหรับทีมงาน: วิธีนำไฟล์นี้ไปทำเป็นลิงก์จริง (เพื่อสร้าง QR)</h2>
+      <p class="muted">ไฟล์นี้เป็นหน้า Landing Page แบบไฟล์เดียว (HTML) สามารถโฮสต์ฟรีได้หลายวิธี</p>
+      <ul class="checklist">
+        <li><b>วิธีง่าย:</b> อัปโหลดขึ้น <b>GitHub Pages</b> หรือ <b>Netlify</b> (ฟรี) แล้วได้ลิงก์ทันที</li>
+        <li><b>เสียงบำบัด:</b> อัปโหลด MP3 ไปที่ Hosting แล้วนำลิงก์มาแทนค่า <span class="mono">src=""</span></li>
+        <li><b>แบบประเมิน:</b> ถ้าต้องการเก็บข้อมูลจริง ให้ทำ Google Form แล้วใส่ลิงก์/ฝัง iframe</li>
+      </ul>
+    </section>
+
+  </div>
+
+<script>
+/* ---------- Sound Therapy helpers ---------- */
+const audioEl = document.querySelector('audio');
+document.getElementById('soundGuideBtn').addEventListener('click', () => {
+  const el = document.getElementById('soundGuide');
+  el.style.display = (el.style.display === 'none') ? 'block' : 'none';
+});
+document.getElementById('soundStopBtn').addEventListener('click', () => {
+  try { audioEl.pause(); audioEl.currentTime = 0; } catch(e){}
+});
+
+/* ---------- Breathing timer ---------- */
+let totalSeconds = 300;
+let remaining = totalSeconds;
+let timer = null;
+let phaseIndex = 0;
+const phases = [
+  {label:"หายใจเข้า 4 วินาที", sec:4},
+  {label:"กลั้น 2 วินาที", sec:2},
+  {label:"หายใจออก 6 วินาที", sec:6}
+];
+let phaseRemaining = phases[0].sec;
+
+const timeLeft = document.getElementById('timeLeft');
+const phase = document.getElementById('phase');
+const startBtn = document.getElementById('startBtn');
+const resetBtn = document.getElementById('resetBtn');
+
+function fmt(s){
+  const m = Math.floor(s/60);
+  const ss = (s%60).toString().padStart(2,'0');
+  return `${m.toString().padStart(2,'0')}:${ss}`;
+}
+function render(){
+  timeLeft.textContent = fmt(remaining);
+  phase.textContent = remaining === 0 ? "จบแล้ว • นอนหลับให้สบาย" : phases[phaseIndex].label + ` (เหลือ ${phaseRemaining}s)`;
+}
+function setMinutes(min){
+  totalSeconds = min * 60;
+  remaining = totalSeconds;
+  phaseIndex = 0;
+  phaseRemaining = phases[0].sec;
+  render();
+}
+document.querySelectorAll('[data-min]').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    document.querySelectorAll('[data-min]').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    stopTimer();
+    setMinutes(parseInt(btn.dataset.min,10));
+  });
+});
+function stopTimer(){
+  if(timer){ clearInterval(timer); timer=null; }
+  startBtn.textContent = "เริ่ม";
+}
+function tick(){
+  if(remaining <= 0){
+    remaining = 0;
+    stopTimer();
+    render();
+    return;
+  }
+  remaining--;
+  phaseRemaining--;
+  if(phaseRemaining <= 0){
+    phaseIndex = (phaseIndex + 1) % phases.length;
+    phaseRemaining = phases[phaseIndex].sec;
+  }
+  render();
+}
+startBtn.addEventListener('click', ()=>{
+  if(timer){
+    stopTimer();
+  }else{
+    timer = setInterval(tick, 1000);
+    startBtn.textContent = "หยุด";
+  }
+});
+resetBtn.addEventListener('click', ()=>{
+  stopTimer();
+  setMinutes(Math.round(totalSeconds/60));
+});
+render();
+
+/* ---------- 7-day routine content ---------- */
+const routine = [
+  {
+    title:"Reset เวลาเข้านอน",
+    desc:"คืนนี้เลื่อนเวลา ‘เข้าที่นอน’ ให้เร็วขึ้น 15 นาที และลดหน้าจอก่อนนอน",
+    list:[
+      "ปิดจอ/โหมดห้ามรบกวนก่อนนอนอย่างน้อย 20 นาที",
+      "ฉีดสเปรย์บนหมอน 2–3 ครั้ง แล้วหายใจลึก 5 รอบ",
+      "ตั้งเวลาเข้านอนที่ทำได้จริง (ไม่ฝืน)"
+    ]
+  },
+  {
+    title:"ลดคาเฟอีนช่วงบ่าย",
+    desc:"ลดสิ่งที่กระตุ้นระบบประสาทช่วงบ่าย เพื่อให้หัวค่ำหลับง่ายขึ้น",
+    list:[
+      "งดกาแฟ/ชานมหลัง 14:00 น.",
+      "ถ้าหิวตอนดึก เลือกของเบา ๆ ไม่หวานจัด",
+      "ทำ Breathing 3 นาที ก่อนนอน"
+    ]
+  },
+  {
+    title:"จัดห้องให้นอนง่าย",
+    desc:"ลดแสงและสิ่งรบกวน เพื่อให้สมองเชื่อมโยง ‘เตียง = นอน’",
+    list:[
+      "หรี่ไฟ/ปิดไฟขาวก่อนนอน 30 นาที",
+      "ปรับอุณหภูมิให้สบาย และลดเสียงรบกวน",
+      "เปิด Sound Therapy 10 นาที"
+    ]
+  },
+  {
+    title:"ปล่อยความคิดก่อนนอน",
+    desc:"คืนนี้โฟกัสการปล่อยความคิด ไม่เอางานขึ้นเตียง",
+    list:[
+      "จด ‘To-do พรุ่งนี้’ 3 ข้อ แล้วปิดสมุด",
+      "วางมือถือให้ไกลมือ หรือหันหน้าจอลง",
+      "Breathing 5 นาที แล้วปิดตา"
+    ]
+  },
+  {
+    title:"รีเซ็ตจังหวะร่างกาย",
+    desc:"ตื่นให้ใกล้เวลาเดิม และรับแสงเช้า เพื่อปรับนาฬิกาชีวภาพ",
+    list:[
+      "ตื่นใกล้เวลาเดิม (+/- 30 นาที)",
+      "รับแสงธรรมชาติ 5–10 นาทีตอนเช้า",
+      "งีบได้แต่ไม่เกิน 20 นาที"
+    ]
+  },
+  {
+    title:"คืนเบาสบาย",
+    desc:"คืนนี้ทำให้ร่างกาย ‘เบา’ ลดอาหารหนักและความเร่งรีบ",
+    list:[
+      "กินมื้อเย็นไม่หนัก และหลีกเลี่ยงหวานจัด",
+      "ยืดเหยียดเบา ๆ 3 นาที",
+      "ฉีดสเปรย์ แล้วเปิดเสียงเบา ๆ"
+    ]
+  },
+  {
+    title:"สรุปผลและเลือกนิสัยที่ทำต่อ",
+    desc:"ประเมินผล 7 วัน แล้วเลือก 2 นิสัยที่ทำได้จริงไปต่อในชีวิตประจำวัน",
+    list:[
+      "ดูสรุปคะแนน 7 วัน แล้วเลือกสิ่งที่ช่วยที่สุด",
+      "เลือก 2 นิสัยที่จะทำต่อ (เช่น ปิดจอ 20 นาที + breathing 3 นาที)",
+      "ให้รางวัลตัวเองเล็ก ๆ เพื่อเสริมแรงจูงใจ"
+    ]
+  }
+];
+const daysEl = document.getElementById('days');
+const dayTag = document.getElementById('dayTag');
+const dayTitle = document.getElementById('dayTitle');
+const dayDesc = document.getElementById('dayDesc');
+const dayList = document.getElementById('dayList');
+
+let activeDay = 0;
+function renderDay(i){
+  activeDay = i;
+  document.querySelectorAll('.daybtn.r').forEach((b,idx)=>{
+    b.classList.toggle('active', idx===i);
+  });
+  dayTag.textContent = `DAY ${i+1}`;
+  dayTitle.textContent = routine[i].title;
+  dayDesc.textContent = routine[i].desc;
+  dayList.innerHTML = routine[i].list.map(x=>`<li>${x}</li>`).join('');
+}
+routine.forEach((_,i)=>{
+  const b = document.createElement('button');
+  b.type = "button";
+  b.className = "daybtn r" + (i===0 ? " active":"");
+  b.textContent = `Day ${i+1}`;
+  b.addEventListener('click', ()=>renderDay(i));
+  daysEl.appendChild(b);
+});
+renderDay(0);
+
+/* ---------- Sleep score form (local, no backend) ---------- */
+function clamp(n,min,max){ return Math.max(min, Math.min(max, n)); }
+function scoreToday(hours, latencyPts, wakePts, fresh){
+  // 0–10 score simple heuristic (for demo): hours(0–4) + latency(0–3) + wake(0–3) + fresh(0–10 normalized to 0–3)
+  const hScore = hours >= 7 ? 4 : (hours >= 6 ? 3 : (hours >= 5 ? 2 : (hours >= 4 ? 1 : 0)));
+  const fScore = clamp(Math.round((fresh/10)*3), 0, 3);
+  return clamp(hScore + latencyPts + wakePts + fScore, 0, 10);
+}
+const form = document.getElementById('sleepForm');
+const scoreEl = document.getElementById('score');
+const hintEl = document.getElementById('scoreHint');
+const saveBtn = document.getElementById('saveBtn');
+const exportBtn = document.getElementById('exportBtn');
+const clearBtn = document.getElementById('clearBtn');
+
+let lastEntry = null;
+
+form.addEventListener('submit', (e)=>{
+  e.preventDefault();
+  const hours = parseFloat(document.getElementById('sleepHours').value);
+  const latency = parseInt(document.getElementById('sleepLatency').value,10);
+  const wake = parseInt(document.getElementById('wakeNight').value,10);
+  const fresh = parseInt(document.getElementById('freshness').value,10);
+  const note = document.getElementById('note').value.trim();
+
+  const s = scoreToday(hours, latency, wake, fresh);
+  scoreEl.textContent = s.toString();
+
+  let msg = "";
+  if(s >= 8) msg = "ดีมาก — รักษานิสัยที่ทำได้ไว้ต่อเนื่อง";
+  else if(s >= 6) msg = "ดีขึ้น — คืนนี้ลองปิดจอเร็วขึ้นอีกนิด";
+  else if(s >= 4) msg = "พอใช้ — คืนนี้เน้น Breathing 5 นาที + เสียงบำบัด";
+  else msg = "เหนื่อยมาก — คืนนี้ทำให้เบาที่สุด งดจอ + นอนให้เร็วขึ้น 15 นาที";
+
+  hintEl.innerHTML = `<b>${msg}</b><br/><span class="muted">คะแนนนี้เป็นแนวโน้มเพื่อปรับพฤติกรรม ไม่ใช่การวินิจฉัย</span>`;
+
+  lastEntry = {
+    date: new Date().toISOString().slice(0,10),
+    hours, latency, wake, fresh, score:s, note
+  };
+});
+
+saveBtn.addEventListener('click', ()=>{
+  if(!lastEntry){
+    alert("กรุณากดคำนวณคะแนนวันนี้ก่อน แล้วค่อยบันทึก");
+    return;
+  }
+  const key = "sleepwell_entries_v1";
+  const arr = JSON.parse(localStorage.getItem(key) || "[]");
+  arr.push(lastEntry);
+  localStorage.setItem(key, JSON.stringify(arr.slice(-7))); // keep last 7
+  alert("บันทึกแล้ว (เก็บไว้สูงสุด 7 รายการล่าสุดในเครื่องนี้)");
+});
+
+exportBtn.addEventListener('click', ()=>{
+  const key = "sleepwell_entries_v1";
+  const arr = JSON.parse(localStorage.getItem(key) || "[]");
+  if(arr.length === 0){
+    alert("ยังไม่มีข้อมูลที่บันทึกไว้");
+    return;
+  }
+  const avg = Math.round(arr.reduce((a,x)=>a+x.score,0)/arr.length * 10)/10;
+  const lines = arr.map((x,i)=>`${i+1}. ${x.date} — Score ${x.score}/10 — Hours ${x.hours} — Fresh ${x.fresh}/10${x.note?` — Note: ${x.note}`:""}`);
+  alert(`สรุป ${arr.length} วัน (เฉลี่ย ${avg}/10)\n\n` + lines.join("\n"));
+});
+
+clearBtn.addEventListener('click', ()=>{
+  if(confirm("ต้องการล้างข้อมูลที่บันทึกไว้ในเครื่องนี้หรือไม่?")){
+    localStorage.removeItem("sleepwell_entries_v1");
+    alert("ล้างข้อมูลแล้ว");
+  }
+});
+</script>
+</body>
+</html>
